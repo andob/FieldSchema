@@ -98,6 +98,15 @@ dependencies {
 }
 ```
 
+## Mod
+
+Added class names constants
+
+```
+implementation 'com.github.yatatsu.FieldSchema:annotations:0.3.0'
+kapt 'com.github.andob.FieldSchema:processor:0.3.1'
+```
+
 ## License
 
 ```
