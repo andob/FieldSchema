@@ -2,12 +2,16 @@ package com.yatatsu.fieldschema.processor;
 
 import com.squareup.javapoet.ClassName;
 import com.squareup.javapoet.TypeName;
+
+import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
+
 import javax.lang.model.element.Element;
 import javax.lang.model.element.ElementKind;
 import javax.lang.model.element.Modifier;
 import javax.lang.model.element.TypeElement;
+import javax.lang.model.type.DeclaredType;
 
 public class FieldSchemaClassHolder {
 
@@ -20,11 +24,24 @@ public class FieldSchemaClassHolder {
     this.typeElement = typeElement;
     this.typeName = ClassName.get(typeElement);
     if (name == null || name.length() == 0) {
-      this.name = getSimpleClassName().toLowerCase();
+      this.name=getSimpleClassName();
     } else {
       this.name = name.toLowerCase();
     }
-    this.fieldSchemaHolders = findAllNonPrivateFields(typeElement);
+
+    this.fieldSchemaHolders = new LinkedList<>();
+
+    do
+    {
+      if (typeElement!=null)
+      {
+        this.fieldSchemaHolders.addAll(findAllNonPrivateFields(typeElement));
+        typeElement=(TypeElement)((DeclaredType)typeElement.getSuperclass()).asElement();
+        if (typeElement.getSimpleName().toString().equals("Object"))
+          typeElement=null;
+      }
+    }
+    while(typeElement!=null);
   }
 
   public TypeElement getTypeElement() {
