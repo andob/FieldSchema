@@ -98,14 +98,53 @@ dependencies {
 }
 ```
 
-## Mod
+## Fork additions
 
-Added class names constants
+1. Added class names constants
+2. Added TS class containing table name / table column name constants
+
+```kotlin
+@Entity
+@Table(name = "_user", schema = "app")
+@FieldSchemaClass
+class User
+(
+    @Id
+    @Column(name = "_id")
+    val id : String = uuid(),
+
+    @Column(name = "name")
+    val name : String = ""
+)
+```
+
+Result:
+
+```kotlin
+public class FS
+{
+    public static final String User = "User";
+    public static final String User_id = "id";
+    public static final String User_name = "name";
+}
+```
+
+```kotlin
+public class TS
+{
+    public static final String User = "_user";
+    public static final String User_id = "_id";
+    public static final String User_name = "name";
+}
+```
+
+Import the forked version with:
 
 ```
 implementation 'com.github.yatatsu.FieldSchema:annotations:0.3.0'
-kapt 'com.github.andob.FieldSchema:processor:0.3.1'
+kapt 'com.github.andob.FieldSchema:processor:0.3.2'
 ```
+
 
 ## License
 
