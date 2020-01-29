@@ -101,7 +101,7 @@ dependencies {
 ## Fork additions
 
 1. Added class names constants
-2. Added TS class containing table name / table column name constants
+2. Added TS class containing table name / table column name constants (from JPA annotations)
 
 ```kotlin
 @Entity
@@ -142,7 +142,8 @@ Import the forked version with:
 
 ```
 implementation 'com.github.yatatsu.FieldSchema:annotations:0.3.0'
-kapt 'com.github.andob.FieldSchema:processor:0.3.2'
+kapt 'com.github.andob.FieldSchema:processor:0.3.2' //for FS
+kapt 'com.github.andob.FieldSchema:processor-jpa:0.3.2' //for TS/JPA
 ```
 
 
