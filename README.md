@@ -132,7 +132,7 @@ public class FS
 ```kotlin
 public class TS
 {
-    public static final String User = "_user";
+    public static final String User = "app._user";
     public static final String User_id = "_id";
     public static final String User_name = "name";
 }

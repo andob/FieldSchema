@@ -1,1 +1,4 @@
-include ':annotations', ':processor', ':lib-project-sample'
+include ':annotations'
+include ':processor'
+include ':processor-jpa'
+include ':lib-project-sample'
