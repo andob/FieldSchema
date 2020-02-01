@@ -101,7 +101,7 @@ dependencies {
 ## Fork additions
 
 1. Added class names constants
-2. Added TS class containing table name / table column name constants (from JPA annotations)
+2. Added TS class containing table name / table column name constants (from JPA or androidx.room annotations)
 
 ```kotlin
 @Entity
@@ -142,8 +142,10 @@ Import the forked version with:
 
 ```
 implementation 'com.github.yatatsu.FieldSchema:annotations:0.3.0'
-kapt 'com.github.andob.FieldSchema:processor:0.3.2' //for FS
-kapt 'com.github.andob.FieldSchema:processor-jpa:0.3.2' //for TS/JPA
+kapt 'com.github.andob.FieldSchema:processor:0.3.3' //for FS
+kapt 'com.github.andob.FieldSchema:processor-jpa:0.3.3' //for TS/JPA
+kapt 'com.github.andob.FieldSchema:processor-room:0.3.3' //for TS/ROOM
+//note: you can't use both TS/JPA and TS/ROOM in the same module
 ```
 
 

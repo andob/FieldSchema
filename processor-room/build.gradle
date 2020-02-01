@@ -1,0 +1,20 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+group = 'com.github.yatatsu'
+
+targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.VERSION_1_8
+
+task copyTestResources(type: Copy) {
+  from "${projectDir}/src/test/resources"
+  into "${buildDir}/classes/test"
+}
+processTestResources.dependsOn copyTestResources
+
+dependencies {
+  compile project(':annotations')
+  compile 'com.squareup:javapoet:1.12.1'
+
+  testCompile 'junit:junit:4.12'
+  testCompile 'com.google.testing.compile:compile-testing:0.9'
+}
