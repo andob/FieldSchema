@@ -1,6 +1,16 @@
 apply plugin: 'java'
-apply plugin: 'maven'
-group = 'com.github.yatatsu'
+apply plugin: 'maven-publish'
 
 targetCompatibility = JavaVersion.VERSION_1_7
 sourceCompatibility = JavaVersion.VERSION_1_7
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = "ro.andob.fieldschema"
+            artifactId = 'annotations'
+            version = '0.3.4'
+            from components.java
+        }
+    }
+}

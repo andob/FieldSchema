@@ -1,6 +1,5 @@
 apply plugin: 'java'
-apply plugin: 'maven'
-group = 'com.github.yatatsu'
+apply plugin: 'maven-publish'
 
 targetCompatibility = JavaVersion.VERSION_1_8
 sourceCompatibility = JavaVersion.VERSION_1_8
@@ -12,9 +11,20 @@ task copyTestResources(type: Copy) {
 processTestResources.dependsOn copyTestResources
 
 dependencies {
-  compile project(':annotations')
+  compile 'ro.andob.fieldschema:annotations:0.3.4'
   compile 'com.squareup:javapoet:1.12.1'
 
   testCompile 'junit:junit:4.12'
   testCompile 'com.google.testing.compile:compile-testing:0.9'
+}
+
+publishing {
+  publications {
+    maven(MavenPublication) {
+      groupId = "ro.andob.fieldschema"
+      artifactId = 'fs-processor'
+      version = '0.3.4'
+      from components.java
+    }
+  }
 }

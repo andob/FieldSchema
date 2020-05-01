@@ -5,9 +5,9 @@ configurations {
 }
 
 dependencies {
-  annotationProcessor project(':processor')
-  annotationProcessor project(':processor-jpa')
-  compile project(':annotations')
+  annotationProcessor 'ro.andob.fieldschema:fs-processor:0.3.4'
+  annotationProcessor 'ro.andob.fieldschema:ts-processor-jpa:0.3.4'
+  compile 'ro.andob.fieldschema:annotations:0.3.4'
 
   implementation 'io.ebean:ebean:12.1.10'
 }

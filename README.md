@@ -141,10 +141,16 @@ public class TS
 Import the forked version with:
 
 ```
-implementation 'com.github.yatatsu.FieldSchema:annotations:0.3.0'
-kapt 'com.github.andob.FieldSchema:processor:0.3.3' //for FS
-kapt 'com.github.andob.FieldSchema:processor-jpa:0.3.3' //for TS/JPA
-kapt 'com.github.andob.FieldSchema:processor-room:0.3.3' //for TS/ROOM
+repositories {
+    maven { url 'http://www.andob.info/' }
+}
+```
+
+```
+implementation 'ro.andob.fieldschema:annotations:0.3.4'
+kapt 'ro.andob.fieldschema:fs-processor:0.3.4' //for FS
+kapt 'ro.andob.fieldschema:ts-processor-jpa:0.3.4' //for TS/JPA
+kapt 'ro.andob.fieldschema:ts-processor-room:0.3.4' //for TS/ROOM
 //note: you can't use both TS/JPA and TS/ROOM in the same module
 ```
 
