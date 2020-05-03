@@ -2,7 +2,6 @@
 
 [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Build Status](https://travis-ci.org/yatatsu/FieldSchema.svg?branch=master)](https://travis-ci.org/yatatsu/FieldSchema)
-[![](https://jitpack.io/v/yatatsu/FieldSchema.svg)](https://jitpack.io/#yatatsu/FieldSchema)
 
 Generate field name constant for Android.
 
@@ -68,34 +67,18 @@ And generate class is `com.example.app.FS`. The default package is `com.yatatsu.
 
 ## Download
 
-- Distributed by [JitPack](https://jitpack.io). Current version is 
-[![](https://jitpack.io/v/yatatsu/FieldSchema.svg)](https://jitpack.io/#yatatsu/FieldSchema)
-- You also need `android-apt` plugin.
-
-```groovy
-buildscript {
-  repositories {
-    jcenter()
-  }
-  dependencies {
-    classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
-  }
-}
-
-allprojects {
-  repositories {
-    maven { url "https://jitpack.io" }
-	}
+```
+repositories {
+    maven { url 'http://maven.andob.info/reporitory/open_source' }
 }
 ```
 
-```groovy
-apply plugin: 'com.neenbedankt.android-apt'
-
-dependencies {
-  compile 'com.github.yatatsu.FieldSchema:annotations:X.X.X'
-  apt 'com.github.yatatsu.FieldSchema:processor:X.X.X'
-}
+```
+implementation 'ro.andob.fieldschema:annotations:0.3.4'
+kapt 'ro.andob.fieldschema:fs-processor:0.3.4' //for FS
+kapt 'ro.andob.fieldschema:ts-processor-jpa:0.3.4' //for TS/JPA
+kapt 'ro.andob.fieldschema:ts-processor-room:0.3.4' //for TS/ROOM
+//note: you can't use both TS/JPA and TS/ROOM in the same module
 ```
 
 ## Fork additions
@@ -142,7 +125,7 @@ Import the forked version with:
 
 ```
 repositories {
-    maven { url 'http://www.andob.info/' }
+    maven { url 'http://maven.andob.info/reporitory/open_source' }
 }
 ```
 
