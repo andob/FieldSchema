@@ -69,7 +69,7 @@ And generate class is `com.example.app.FS`. The default package is `com.yatatsu.
 
 ```
 repositories {
-    maven { url 'http://maven.andob.info/repository/open_source' }
+    maven { url 'https://maven.andob.info/repository/open_source' }
 }
 ```
 
@@ -125,7 +125,7 @@ Import the forked version with:
 
 ```
 repositories {
-    maven { url 'http://maven.andob.info/repository/open_source' }
+    maven { url 'https://maven.andob.info/repository/open_source' }
 }
 ```
 
