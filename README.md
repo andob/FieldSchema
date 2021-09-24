@@ -1,10 +1,10 @@
-### FieldSchema
+## FieldSchema
 
 Annotation processor to generate class / field / table / column name constants.
 
-#### Example
+### Example
 
-```java
+```kotlin
 @Entity
 @Table(name = "_user", schema = "app")
 @FieldSchemaClass
@@ -66,7 +66,7 @@ public class TS
 - ``FS.<className>`` and ``FS.<className>_<fieldName>`` from class and field names. Useful for reflection.
 - ``TS.<tableName`` and ``TS.<tableName>_<columnName>`` from table and column names (extracted from JPA annotations or Google ROOM annotations). Useful for raw queries.
 
-#### Import
+### Import
 
 ```
 repositories {
@@ -82,9 +82,9 @@ kapt 'ro.andob.fieldschema:ts-processor-room:0.3.4' //for TS/ROOM
 //note: you can't use both TS/JPA and TS/ROOM in the same module
 ```
 
-#### This is a fork, you can find the original library [here](https://github.com/yatatsu/FieldSchema)
+### This is a fork, you can find the original library [here](https://github.com/yatatsu/FieldSchema)
 
-#### License
+### License
 
 ```
 Copyright 2016 KITAGAWA Tatsuya, 2017-2021 Dobrescu Andrei
