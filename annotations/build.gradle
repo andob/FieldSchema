@@ -1,8 +1,10 @@
 apply plugin: 'java'
 apply plugin: 'maven-publish'
 
-targetCompatibility = JavaVersion.VERSION_1_7
-sourceCompatibility = JavaVersion.VERSION_1_7
+java {
+    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_1_8
+}
 
 publishing {
     repositories.maven {

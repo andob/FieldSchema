@@ -1,8 +1,10 @@
 apply plugin: 'java'
 apply plugin: 'maven-publish'
 
-targetCompatibility = JavaVersion.VERSION_1_8
-sourceCompatibility = JavaVersion.VERSION_1_8
+java {
+  targetCompatibility = JavaVersion.VERSION_1_8
+  sourceCompatibility = JavaVersion.VERSION_1_8
+}
 
 task copyTestResources(type: Copy) {
   from "${projectDir}/src/test/resources"
@@ -11,11 +13,11 @@ task copyTestResources(type: Copy) {
 processTestResources.dependsOn copyTestResources
 
 dependencies {
-  compile 'ro.andob.fieldschema:annotations:0.3.4'
-  compile 'com.squareup:javapoet:1.12.1'
+  implementation 'ro.andob.fieldschema:annotations:0.3.4'
+  implementation 'com.squareup:javapoet:1.12.1'
 
-  testCompile 'junit:junit:4.12'
-  testCompile 'com.google.testing.compile:compile-testing:0.9'
+  testImplementation 'junit:junit:4.12'
+  testImplementation 'com.google.testing.compile:compile-testing:0.9'
 }
 
 publishing {

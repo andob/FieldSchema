@@ -13,3 +13,5 @@ echo "Publishing..."
 ./gradlew :processor-room:publish
 
 set +o allexport
+
+read -s -r TEMP
