@@ -24,7 +24,7 @@ public class FieldSchemaClassHolder {
     this.typeElement = typeElement;
     this.typeName = ClassName.get(typeElement);
     if (name == null || name.length() == 0) {
-      this.name=getSimpleClassName();
+      this.name = getSimpleClassName();
     } else {
       this.name = name.toLowerCase();
     }
@@ -36,9 +36,9 @@ public class FieldSchemaClassHolder {
       if (typeElement!=null)
       {
         this.fieldSchemaHolders.addAll(findAllNonPrivateFields(typeElement));
-        typeElement=(TypeElement)((DeclaredType)typeElement.getSuperclass()).asElement();
+        typeElement = (TypeElement)((DeclaredType)typeElement.getSuperclass()).asElement();
         if (typeElement.getSimpleName().toString().equals("Object"))
-          typeElement=null;
+          typeElement = null;
       }
     }
     while(typeElement!=null);

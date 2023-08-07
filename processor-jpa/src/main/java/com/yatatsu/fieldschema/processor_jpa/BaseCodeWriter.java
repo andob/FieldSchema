@@ -13,7 +13,7 @@ public abstract class BaseCodeWriter<T> {
     private final List<T> holders;
 
     BaseCodeWriter(List<T> holders) {
-        this.holders=holders;
+        this.holders = holders;
     }
 
     public void write(String packageName, TypeSpec.Builder typeSpecBuilder) throws IOException

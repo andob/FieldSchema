@@ -53,7 +53,7 @@ public class FieldSchemaProcessor
       List<FieldSchemaHolder> holders = new ArrayList<>();
       List<FieldSchemaClassHolder> classHolders = new ArrayList<>();
       roundEnv.getElementsAnnotatedWith(annotations.iterator().next()).stream().map(element -> {
-        FieldSchemaClassHolder holder=new FieldSchemaClassHolder((TypeElement) element, null);
+        FieldSchemaClassHolder holder = new FieldSchemaClassHolder((TypeElement) element, null);
         classHolders.add(holder);
         return holder;
       }).flatMap(holder -> holder.getFieldSchemaHolders().stream()).forEach(holder -> {

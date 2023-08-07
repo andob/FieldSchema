@@ -21,11 +21,11 @@ public class FieldSchemaHolder {
 
     for (AnnotationMirror annotationMirror : element.getAnnotationMirrors()) {
       if (annotationMirror.getAnnotationType().toString().equals("javax.persistence.Column")) {
-        Set<? extends ExecutableElement> keys=annotationMirror.getElementValues().keySet();
+        Set<? extends ExecutableElement> keys = annotationMirror.getElementValues().keySet();
         for (ExecutableElement key : keys) {
-          AnnotationValue value=annotationMirror.getElementValues().get(key);
+          AnnotationValue value = annotationMirror.getElementValues().get(key);
           if (key.toString().startsWith("name"))
-            this.columnName=value.getValue().toString();
+            this.columnName = value.getValue().toString();
         }
       }
     }

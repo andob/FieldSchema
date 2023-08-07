@@ -23,20 +23,20 @@ public class FieldSchemaClassHolder {
     this.typeElement = typeElement;
     this.typeName = ClassName.get(typeElement);
     if (name == null || name.length() == 0) {
-      this.name=getSimpleClassName();
+      this.name = getSimpleClassName();
     } else {
       this.name = name.toLowerCase();
     }
 
-    this.tableName=this.name;
+    this.tableName = this.name;
 
     for (AnnotationMirror annotationMirror : typeElement.getAnnotationMirrors()) {
       if (annotationMirror.getAnnotationType().toString().equals("androidx.room.Entity")) {
-        Set<? extends ExecutableElement> keys=annotationMirror.getElementValues().keySet();
+        Set<? extends ExecutableElement> keys = annotationMirror.getElementValues().keySet();
         for (ExecutableElement key : keys) {
-          AnnotationValue value=annotationMirror.getElementValues().get(key);
+          AnnotationValue value = annotationMirror.getElementValues().get(key);
           if (key.toString().startsWith("tableName"))
-            this.tableName=value.getValue().toString();
+            this.tableName = value.getValue().toString();
         }
       }
     }
@@ -48,9 +48,9 @@ public class FieldSchemaClassHolder {
       if (typeElement!=null)
       {
         this.fieldSchemaHolders.addAll(findAllNonPrivateFields(typeElement));
-        typeElement=(TypeElement)((DeclaredType)typeElement.getSuperclass()).asElement();
+        typeElement = (TypeElement)((DeclaredType)typeElement.getSuperclass()).asElement();
         if (typeElement.getSimpleName().toString().equals("Object"))
-          typeElement=null;
+          typeElement = null;
       }
     }
     while(typeElement!=null);
