@@ -4,7 +4,3 @@ allprojects {
     maven { url 'https://andob.io/repository/open_source/' }
   }
 }
-
-task clean(type: Delete) {
-  delete rootProject.buildDir
-}

@@ -23,7 +23,7 @@ import javax.tools.Diagnostic;
 
 import static com.yatatsu.fieldschema.processor.BaseCodeWriter.TARGET_CLASS_NAME;
 
-@SupportedSourceVersion(SourceVersion.RELEASE_8)
+@SupportedSourceVersion(SourceVersion.RELEASE_17)
 @SupportedAnnotationTypes({
     "com.yatatsu.fieldschema.annotations.FieldSchemaClass"
 })
