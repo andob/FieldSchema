@@ -49,7 +49,7 @@ public class FieldSchemaClassHolder {
 
     do
     {
-      if (typeElement!=null)
+      if (typeElement != null)
       {
         this.fieldSchemaHolders.addAll(findAllNonPrivateFields(typeElement));
         typeElement = (TypeElement)((DeclaredType)typeElement.getSuperclass()).asElement();
@@ -57,7 +57,7 @@ public class FieldSchemaClassHolder {
           typeElement = null;
       }
     }
-    while(typeElement!=null);
+    while (typeElement != null);
   }
 
   public TypeElement getTypeElement() {
